@@ -1,0 +1,70 @@
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+    binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
+    output = "/home/ubuntu/voc-analyzer/app/node_modules/.prisma/client"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Company {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  analyses Analysis[]
+  
+  @@map("companies")
+}
+
+model Analysis {
+  id          String   @id @default(cuid())
+  companyId   String
+  company     Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  
+  totalTweets    Int      @default(0)
+  positiveTweets Int      @default(0)
+  negativeTweets Int      @default(0)
+  neutralTweets  Int      @default(0)
+  
+  sentimentScore Float    @default(0.0)
+  engagementRate Float    @default(0.0)
+  reachEstimate  Int      @default(0)
+  
+  topTopics      Json     @default("[]")
+  competitors    Json     @default("[]")
+  insights       Json     @default("[]")
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  tweets Tweet[]
+  
+  @@map("analyses")
+}
+
+model Tweet {
+  id         String   @id @default(cuid())
+  analysisId String
+  analysis   Analysis @relation(fields: [analysisId], references: [id], onDelete: Cascade)
+  
+  tweetId    String   @unique
+  content    String
+  author     String
+  sentiment  String   // positive, negative, neutral
+  score      Float    @default(0.0)
+  likes      Int      @default(0)
+  retweets   Int      @default(0)
+  replies    Int      @default(0)
+  
+  createdAt DateTime @default(now())
+  
+  @@map("tweets")
+}
