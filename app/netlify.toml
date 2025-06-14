@@ -3,13 +3,9 @@
   base    = "app"
   publish = ".next"
 
-[build.environment]
-  DATABASE_URL = "postgresql://csaugo:Axe123@nline@db.ucqqmycyxgjpezknhzuy.supabase.co:5432/analisevoc?sslmode=require"
-  PRISMA_GENERATE_SKIP_VALIDATE = "true"
-
 
 [build.environment]
-  DATABASE_URL = "postgresql://postgres:Axe123@nline@db.ucqqmycyxgjpezknhzuy.supabase.co:5432/postgres?sslmode=require"
+  DATABASE_URL = "postgresql://postgres:Axe123%40nline@db.ucqqmycyxgjpezknhzuy.supabase.co:5432/postgres?sslmode=require"
   PRISMA_GENERATE_SKIP_VALIDATE = "true"
   NEXT_PUBLIC_SUPABASE_URL = "https://ucqqmycyxgjpezknhzuy.supabase.co"
   NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjcXFteWN5eGdqcGV6a25oenV5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk4NzA0MTgsImV4cCI6MjA2NTQ0NjQxOH0.w6ZLTc647nbCCA-DfL00J9WA5AY7vtCLE8llhNurAJ0"
