@@ -5,6 +5,7 @@
 
 [build.environment]
   DATABASE_URL = "postgresql://postgres:Axe123@nline@db.ucqqmycyxgjpezknhzuy.supabase.co:5432/postgres"
+  PRISMA_GENERATE_SKIP_VALIDATE = "true"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
