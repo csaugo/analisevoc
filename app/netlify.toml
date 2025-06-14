@@ -5,7 +5,7 @@
   environment = { NEXT_PUBLIC_DATABASE_URL = "postgresql://postgres:Axe123@nline@db.ucqqmycyxgjpezknhzuy.supabase.co:5432/postgres" }
 
 [[plugins]]
-  package = "@netlify/next"
+  package = "@netlify/plugin-nextjs"
 
 [dev]
   command = "npm run dev"
