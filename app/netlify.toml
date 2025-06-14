@@ -1,7 +1,7 @@
 [build]
   command = "npm install --legacy-peer-deps && npx prisma generate && npm run build"
   base    = "app"
-  publish = "app/.next"
+  publish = ".next"
   environment = { NEXT_PUBLIC_DATABASE_URL = "postgresql://postgres:Axe123@nline@db.ucqqmycyxgjpezknhzuy.supabase.co:5432/postgres" }
 
 [[plugins]]
