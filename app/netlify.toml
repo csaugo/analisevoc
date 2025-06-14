@@ -4,7 +4,7 @@
   publish = ".next"
 
 [build.environment]
-  DATABASE_URL = "postgresql://postgres:Axe123@nline@db.ucqqmycyxgjpezknhzuy.supabase.co:5432/postgres"
+  DATABASE_URL = "postgresql://csaugo:Axe123@nline@db.ucqqmycyxgjpezknhzuy.supabase.co:5432/analisevoc?sslmode=require"
   PRISMA_GENERATE_SKIP_VALIDATE = "true"
 
 [[plugins]]
