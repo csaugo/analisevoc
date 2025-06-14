@@ -123,7 +123,7 @@ export default function HomePage() {
           </h1>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
             Descubra o que seus clientes realmente pensam sobre sua marca através de análise 
-            inteligente de dados do Twitter e Reddit em tempo real.
+            inteligente de dados em tempo real.
           </p>
 
           {/* Analysis Form */}
@@ -135,10 +135,7 @@ export default function HomePage() {
           >
             <Card className="shadow-xl border-0 bg-white/90 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-2xl text-center">Iniciar Análise Voz do Cliente</CardTitle>
-                <CardDescription className="text-center">
-                  Digite o nome da sua empresa ou produto para começar
-                </CardDescription>
+                <CardTitle className="text-2xl text-center">Iniciar Análise</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 {/* Platform Selector */}

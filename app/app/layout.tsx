@@ -8,8 +8,8 @@ import { Toaster } from '@/components/ui/toaster'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Voz do Cliente - Análise de Voz do Cliente',
-  description: 'Plataforma completa para análise de Voz do Cliente com dados do Twitter',
+  title: 'Voz do Cliente - Análise de Sentimento',
+  description: 'Plataforma completa para análise da Voz do Cliente com dados reais',
 }
 
 export default function RootLayout({

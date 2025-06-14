@@ -18,7 +18,8 @@ import {
   Repeat2
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { VoCAnalysis } from '@/lib/types';
 import SentimentChart from '@/components/sentiment-chart';
@@ -283,6 +284,58 @@ export default function AnalysisPage() {
           className="mb-8"
         >
           <CompetitorChart analysis={analysis} />
+        </motion.section>
+
+        {/* Ações sugeridas */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="mb-8"
+        >
+          <Card className="shadow-lg border-0 bg-white/90 backdrop-blur-sm">
+            <CardHeader>
+              <CardTitle className="flex items-center space-x-2">
+                <span>📝</span>
+                <span>Ações sugeridas</span>
+              </CardTitle>
+              <CardDescription>
+                Recomendações práticas para diferentes horizontes de tempo
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="w-full">
+                <Tabs defaultValue="curto" className="w-full">
+                  <TabsList className="mb-4">
+                    <TabsTrigger value="curto">Curto prazo</TabsTrigger>
+                    <TabsTrigger value="medio">Médio prazo</TabsTrigger>
+                    <TabsTrigger value="longo">Longo prazo</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="curto">
+                    <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                      <li>Responder rapidamente a menções negativas nas redes sociais.</li>
+                      <li>Compartilhar feedbacks positivos recentes com a equipe.</li>
+                      <li>Monitorar tendências emergentes de sentimento.</li>
+                    </ul>
+                  </TabsContent>
+                  <TabsContent value="medio">
+                    <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                      <li>Implementar melhorias sugeridas com base em feedbacks recorrentes.</li>
+                      <li>Realizar campanhas para engajamento de clientes satisfeitos.</li>
+                      <li>Estabelecer rotinas de análise de sentimento mensal.</li>
+                    </ul>
+                  </TabsContent>
+                  <TabsContent value="longo">
+                    <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                      <li>Desenvolver programas de fidelização baseados em insights de sentimento.</li>
+                      <li>Revisar estratégias de produto/serviço conforme padrões de longo prazo.</li>
+                      <li>Investir em tecnologia para automação do monitoramento de sentimento.</li>
+                    </ul>
+                  </TabsContent>
+                </Tabs>
+              </div>
+            </CardContent>
+          </Card>
         </motion.section>
 
         {/* Principais Tópicos e Insights */}
