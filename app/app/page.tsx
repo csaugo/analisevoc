@@ -167,7 +167,7 @@ export default function HomePage() {
                 {/* Company Input and Analysis Button */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Input
-                    placeholder="Ex: Nubank, Magazine Luiza, Spotify..."
+                    placeholder="Ex: Banco do Brasil, Magazine Luiza, Spotify..."
                     value={companyName}
                     onChange={(e) => setCompanyName(e.target.value)}
                     className="flex-1 h-12 text-lg"
